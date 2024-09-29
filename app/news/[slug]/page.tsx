@@ -13,7 +13,7 @@ type Props = {
   };
 };
 
-export const validate = 0;
+export const revalidate = 0;
 
 export default async function Page({ params, searchParams }: Props) {
   const data: News = await getNewsDetail(params.slug, {
