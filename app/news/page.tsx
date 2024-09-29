@@ -11,7 +11,7 @@ import { getNewsList } from "../_libs/microcms";
 
 // SSRではキャッシュが全く利用されない状態となるため、ISRを適用 -> revalidateの値を1以上にする
 // 60秒間はCDNにあるキャッシュが保持される方式となる
-export const revalidate = 60;
+// export const revalidate = 60;
 
 export default async function Page() {
   const { contents: news, totalCount } = await getNewsList();

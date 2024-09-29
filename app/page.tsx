@@ -5,6 +5,10 @@ import { getNewsList, News } from "./_libs/microcms";
 import NewsList from "./_components/NewsList";
 import { TOP_NEWS_LIMIT } from "./_constants";
 
+// トップページには最新のお知らせが2件表示されるため、revalidateの値を詳細ページと合わせるor長くする
+// あるAPIに対する一覧ページと詳細ページにおけるキャッシュの保持時間(revalidate)は同じにするか、詳細ページの方が短くなるようにセットしておくといい。
+export const revalidate = 60;
+
 export default async function Home() {
   const data = await getNewsList({
     limit: TOP_NEWS_LIMIT,

@@ -76,6 +76,7 @@ export const getCategoryDetail = async (
     queries,
     customRequestInit: {
       next: {
+        // draftKeyがある場合はSSR,ない場合はIS Rを適用
         revalidate: queries?.draftKey === undefined ? 60 : 0,
       },
     },
