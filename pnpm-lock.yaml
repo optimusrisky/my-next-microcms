@@ -23,6 +23,9 @@ importers:
       next:
         specifier: 14.1.4
         version: 14.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      nextjs-basic-auth-middleware:
+        specifier: 3.1.0
+        version: 3.1.0(next@14.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       react:
         specifier: ^18
         version: 18.3.1
@@ -1160,6 +1163,11 @@ packages:
         optional: true
       sass:
         optional: true
+
+  nextjs-basic-auth-middleware@3.1.0:
+    resolution: {integrity: sha512-k1GSYiLMYj4tK6swAmArTUBheSkv7roUUF2KI8Cv8HYHmSYep5Y0AP0RB/1sez7xTRi2Fw2SxYbQA/jAmBJCug==}
+    peerDependencies:
+      next: '>=13.1'
 
   node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
@@ -2939,6 +2947,10 @@ snapshots:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
+
+  nextjs-basic-auth-middleware@3.1.0(next@14.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+    dependencies:
+      next: 14.1.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   node-releases@2.0.18: {}
 
