@@ -34,9 +34,11 @@ import { createNextAuthMiddleware } from "nextjs-basic-auth-middleware";
 // ----------------------
 
 // Basic認証
+// 基本的にBasic認証はサイト公開前に第三者からのアクセスを制限したい場合に用いる。
+// ※※※ 公開のタイミングでBasic認証を外すことを忘れない ※※※
 
-export const middleware = createNextAuthMiddleware();
+// export const middleware = createNextAuthMiddleware();
 
-export const config = {
-  matcher: ["/(.*)"],
-};
+// export const config = {
+//   matcher: ["/(.*)"],
+// };
