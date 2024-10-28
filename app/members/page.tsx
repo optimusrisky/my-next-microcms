@@ -2,6 +2,11 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { getMembersList } from "../_libs/microcms";
 import { MEMBERS_LIST_LIMIT } from "../_constants";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "メンバー",
+};
 
 export default async function Page() {
   const data = await getMembersList({ limit: MEMBERS_LIST_LIMIT });

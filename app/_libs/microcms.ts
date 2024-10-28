@@ -83,3 +83,16 @@ export const getCategoryDetail = async (
   });
   return detailData;
 };
+// ニュースのコンテンツとカテゴリーのコンテンツをmicroCMSからすべて取得する関数
+export const getAllNewsList = async () => {
+  const listData = await client.getAllContents<News>({
+    endpoint: "news",
+  });
+  return listData;
+};
+export const getAllCategoryList = async () => {
+  const listData = await client.getAllContents<Category>({
+    endpoint: "categories",
+  });
+  return listData;
+};

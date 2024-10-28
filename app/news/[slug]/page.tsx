@@ -3,6 +3,7 @@ import ButtonLink from "@/app/_components/ButtonLink";
 import { getNewsDetail, News } from "@/app/_libs/microcms";
 import styles from "./page.module.css";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 type Props = {
   params: {
@@ -12,6 +13,22 @@ type Props = {
     dk?: string;
   };
 };
+
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
+  const data = await getNewsDetail(params.slug, { draftKey: searchParams.dk });
+  return {
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+      images: [data?.thumbnail?.url ?? ""],
+    },
+  };
+}
 
 // 更新頻度の高いページのため、SSRを適用
 // revalidate... キャッシュの保持期間(秒)
