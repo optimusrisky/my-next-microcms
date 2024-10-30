@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
 import "./globals.css";
@@ -35,6 +36,9 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      {/* 外部ドメインから読み込むスクリプトのことをサードパーティスクリプトという。通常、サードパーティスクリプトは読み込むタイミングに気をつけないと、パフォーマンスを低下させてしまう */}
+      <GoogleAnalytics gaId="G-XXX" />
     </html>
+    // Core Web Vitalsの三大指標
   );
 }
